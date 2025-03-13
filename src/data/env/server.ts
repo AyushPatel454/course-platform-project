@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 /**
  * createEnv:
@@ -16,11 +16,11 @@ export const env = createEnv({
     DB_NAME: z.string().min(1),
     DB_HOST: z.string().min(1),
     CLERK_SECRET_KEY: z.string().min(1),
+    CLERK_WEBHOOK_SECRET: z.string().min(1),
   },
   /**
    * experimental__runtimeEnv:
    * all environment variables available at runtime (e.g., during deployment) are accessible to the app.
    */
   experimental__runtimeEnv: process.env,
-
-})
+});
